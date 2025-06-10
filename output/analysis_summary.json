@@ -1,0 +1,10 @@
+{
+  "total_pages": 3,
+  "total_frameworks": 3,
+  "total_strategies": 4,
+  "overall_average_score": 90.25462962962963,
+  "best_page": "about",
+  "best_framework": "Next.js",
+  "best_strategy": "Server-Side Rendering",
+  "analysis_timestamp": "2025-06-10T22:07:42.958280"
+}

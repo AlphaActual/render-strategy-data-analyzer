@@ -202,34 +202,117 @@ def create_visualizations(cleaned_datasets, page_analyses):
         plt.tight_layout()
         plt.savefig(f'output/{page_name}/{page_name}_heatmap.png', dpi=300, bbox_inches='tight')
         plt.close()
+          # 2. Framework Performance Bar Chart
+        fig, (ax1, ax2) = plt.subplots(1, 2, figsize=(20, 8))
         
-        # 2. Framework Comparison
-        fig, axes = plt.subplots(2, 3, figsize=(18, 10))
+        # Overall Framework Performance (Bar Chart)
+        framework_scores = df.groupby('Framework')['Score'].mean().sort_values(ascending=False)
+        colors = ['#FF6B6B', '#4ECDC4', '#45B7D1']
+        bars = ax1.bar(framework_scores.index, framework_scores.values, 
+                      color=colors[:len(framework_scores)], alpha=0.8, edgecolor='black', linewidth=1.2)
+        
+        ax1.set_title(f'🏆 {page_name.upper()} Overall Framework Performance', 
+                     fontsize=14, fontweight='bold')
+        ax1.set_ylabel('Average Performance Score (%)', fontweight='bold')
+        ax1.set_ylim(0, 100)
+        ax1.grid(axis='y', alpha=0.3, linestyle='--')
+        
+        # Add value labels on bars
+        for bar, score in zip(bars, framework_scores.values):
+            height = bar.get_height()
+            ax1.text(bar.get_x() + bar.get_width()/2., height + 1,
+                    f'{score:.1f}%', ha='center', va='bottom', fontweight='bold', fontsize=12)
+        
+        # Framework Performance by Metric (Line Chart)
         metrics_list = ['FCP', 'LCP', 'SI', 'TTI', 'TBT', 'CLS']
+        framework_metric_data = []
         
-        for i, metric in enumerate(metrics_list):
-            row = i // 3
-            col = i % 3
-            
-            metric_data = df[df['Metric'] == metric]
-            
-            sns.boxplot(data=metric_data, x='Framework', y='Score', ax=axes[row, col])
-            axes[row, col].set_title(f'{metric} Scores Distribution', fontweight='bold')
-            axes[row, col].set_ylabel('Score (%)')
-            axes[row, col].grid(axis='y', alpha=0.3)
-            
-            # Add mean values
-            means = metric_data.groupby('Framework')['Score'].mean()
-            for j, (framework, mean_score) in enumerate(means.items()):
-                axes[row, col].text(j, mean_score + 5, f'{mean_score:.1f}%', 
-                                   ha='center', fontweight='bold', color='red')
+        for framework in df['Framework'].unique():
+            fw_data = df[df['Framework'] == framework]
+            metric_scores = []
+            for metric in metrics_list:
+                metric_score = fw_data[fw_data['Metric'] == metric]['Score'].mean()
+                metric_scores.append(metric_score)
+            framework_metric_data.append((framework, metric_scores))
         
-        plt.suptitle(f'🏗️ {page_name.upper()} Framework Performance Distribution', 
-                    fontsize=16, fontweight='bold', y=1.02)
+        # Plot lines for each framework
+        line_colors = ['#FF6B6B', '#4ECDC4', '#45B7D1']
+        markers = ['o', 's', '^']
+        
+        for i, (framework, scores) in enumerate(framework_metric_data):
+            ax2.plot(metrics_list, scores, 
+                    color=line_colors[i % len(line_colors)], 
+                    marker=markers[i % len(markers)], 
+                    linewidth=3, markersize=8, 
+                    label=framework, alpha=0.8)
+            
+            # Add value labels on points
+            for j, score in enumerate(scores):
+                ax2.annotate(f'{score:.0f}', 
+                           (j, score), 
+                           textcoords="offset points", 
+                           xytext=(0,10), 
+                           ha='center', fontsize=9, fontweight='bold')
+        
+        ax2.set_title(f'📈 {page_name.upper()} Performance by Metric', 
+                     fontsize=14, fontweight='bold')
+        ax2.set_ylabel('Performance Score (%)', fontweight='bold')
+        ax2.set_xlabel('Core Web Vitals Metrics', fontweight='bold')
+        ax2.set_ylim(0, 105)
+        ax2.grid(True, alpha=0.3, linestyle='--')
+        ax2.legend(title='Framework', loc='lower right', fontsize=10)
+        
+        plt.suptitle(f'🚀 {page_name.upper()} Framework Performance Analysis', 
+                    fontsize=18, fontweight='bold', y=0.98)
         plt.tight_layout()
         plt.savefig(f'output/{page_name}/{page_name}_framework_comparison.png', dpi=300, bbox_inches='tight')
         plt.close()
-    
+        
+        # 3. Strategy Performance Grouped Bar Chart
+        fig, ax = plt.subplots(1, 1, figsize=(16, 8))
+        
+        # Prepare data for grouped bar chart
+        strategy_data = df.groupby(['Framework', 'Strategy'])['Score'].mean().unstack()
+          # Create grouped bar chart
+        x = np.arange(len(strategy_data.index))
+        width = 0.2
+        multiplier = 0
+        
+        strategy_colors = {
+            'Client-Side Rendering': '#FF6B6B',
+            'Server-Side Rendering': '#4ECDC4', 
+            'Static Site Generation': '#45B7D1',
+            'Incremental Static Regeneration': '#96CEB4'
+        }
+        
+        for strategy in strategy_data.columns:
+            offset = width * multiplier
+            bars = ax.bar(x + offset, strategy_data[strategy], width, 
+                         label=strategy, color=strategy_colors.get(strategy, '#999999'), 
+                         alpha=0.8, edgecolor='black', linewidth=0.8)
+            
+            # Add value labels on bars
+            for bar in bars:
+                height = bar.get_height()
+                if not np.isnan(height):
+                    ax.text(bar.get_x() + bar.get_width()/2., height + 0.5,
+                           f'{height:.0f}', ha='center', va='bottom', fontweight='bold', fontsize=9)
+            multiplier += 1
+        
+        ax.set_title(f'📊 {page_name.upper()} Strategy Performance by Framework', 
+                    fontsize=16, fontweight='bold')
+        ax.set_ylabel('Performance Score (%)', fontweight='bold')
+        ax.set_xlabel('Framework', fontweight='bold')
+        ax.set_xticks(x + width * 1.5)
+        ax.set_xticklabels(strategy_data.index)
+        ax.set_ylim(0, 105)
+        ax.grid(axis='y', alpha=0.3, linestyle='--')
+        ax.legend(title='Rendering Strategy', bbox_to_anchor=(1.05, 1), loc='upper left')
+        
+        plt.tight_layout()
+        plt.savefig(f'output/{page_name}/{page_name}_strategy_comparison.png', dpi=300, bbox_inches='tight')
+        plt.close()
+
     # Create visualizations for each page
     for page_name, df in cleaned_datasets.items():
         create_page_visualizations(df, page_name, page_analyses[page_name])
