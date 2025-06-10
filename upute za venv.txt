@@ -1,0 +1,19 @@
+tutorial video '#7: Python Virtual Environment (virtualenv) | Python Best Practices'
+https://www.youtube.com/watch?v=CHpQF1rdUMY
+
+ukratko
+otvori terminal u project folderu i
+1)napravi venv: 'python -m venv myVenv'
+2)aktiviraj venv: 'source myVenv/Scripts/activate'
+ako hoces deaktivirati samo upisi 'deactivate'
+
+opcionalno
+3)provjeri lokaciju koji python se koristi: 'which python'
+4)provjeri listu packagea u tom venv-ju: 'pip list'
+5)provjeri verziju pythona: 'python --version'
+6)upgrade pip ako je potrebno: 'pip install --upgrade pip'
+
+7)Za pokretanje skripte kroz file explorer(double clickom)
+napravi bat file kojim ces moci pokrenuti python scriptu koristeci interpreter iz myVenv
+ako ovo ne napravis skripta ce se pokusati pokrenuti sa globalnim pythonom i nece se pokrenuti 
+zbog konflikta sa packageima.
