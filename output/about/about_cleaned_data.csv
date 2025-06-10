@@ -1,0 +1,73 @@
+Page_Type,App_Name,Framework,Strategy,Total_Runs,Metric,Value,Score
+about,Next.js CSR,Next.js,Client-Side Rendering,10,FCP,0.92,100
+about,Next.js CSR,Next.js,Client-Side Rendering,10,LCP,2.93,80
+about,Next.js CSR,Next.js,Client-Side Rendering,10,SI,1.33,100
+about,Next.js CSR,Next.js,Client-Side Rendering,10,TTI,2.93,96
+about,Next.js CSR,Next.js,Client-Side Rendering,10,TBT,8.2,100
+about,Next.js CSR,Next.js,Client-Side Rendering,10,CLS,0.0,100
+about,Nuxt.js CSR,Nuxt.js,Client-Side Rendering,10,FCP,2.59,64
+about,Nuxt.js CSR,Nuxt.js,Client-Side Rendering,10,LCP,2.59,88
+about,Nuxt.js CSR,Nuxt.js,Client-Side Rendering,10,SI,4.44,73
+about,Nuxt.js CSR,Nuxt.js,Client-Side Rendering,10,TTI,2.59,98
+about,Nuxt.js CSR,Nuxt.js,Client-Side Rendering,10,TBT,0.0,100
+about,Nuxt.js CSR,Nuxt.js,Client-Side Rendering,10,CLS,0.0,100
+about,SvelteKit CSR,SvelteKit,Client-Side Rendering,10,FCP,2.51,66
+about,SvelteKit CSR,SvelteKit,Client-Side Rendering,10,LCP,3.06,76
+about,SvelteKit CSR,SvelteKit,Client-Side Rendering,10,SI,4.04,79
+about,SvelteKit CSR,SvelteKit,Client-Side Rendering,10,TTI,3.06,95
+about,SvelteKit CSR,SvelteKit,Client-Side Rendering,10,TBT,0.0,100
+about,SvelteKit CSR,SvelteKit,Client-Side Rendering,10,CLS,0.01,99
+about,Next.js SSR,Next.js,Server-Side Rendering,10,FCP,0.98,100
+about,Next.js SSR,Next.js,Server-Side Rendering,10,LCP,2.89,81
+about,Next.js SSR,Next.js,Server-Side Rendering,10,SI,1.94,97
+about,Next.js SSR,Next.js,Server-Side Rendering,10,TTI,2.89,96
+about,Next.js SSR,Next.js,Server-Side Rendering,10,TBT,10.7,100
+about,Next.js SSR,Next.js,Server-Side Rendering,10,CLS,0.0,100
+about,Nuxt.js SSR,Nuxt.js,Server-Side Rendering,10,FCP,2.53,66
+about,Nuxt.js SSR,Nuxt.js,Server-Side Rendering,10,LCP,2.54,88
+about,Nuxt.js SSR,Nuxt.js,Server-Side Rendering,10,SI,3.06,93
+about,Nuxt.js SSR,Nuxt.js,Server-Side Rendering,10,TTI,2.55,98
+about,Nuxt.js SSR,Nuxt.js,Server-Side Rendering,10,TBT,0.0,100
+about,Nuxt.js SSR,Nuxt.js,Server-Side Rendering,10,CLS,0.0,100
+about,SvelteKit SSR,SvelteKit,Server-Side Rendering,10,FCP,2.52,66
+about,SvelteKit SSR,SvelteKit,Server-Side Rendering,10,LCP,3.04,77
+about,SvelteKit SSR,SvelteKit,Server-Side Rendering,10,SI,2.93,94
+about,SvelteKit SSR,SvelteKit,Server-Side Rendering,10,TTI,3.04,96
+about,SvelteKit SSR,SvelteKit,Server-Side Rendering,10,TBT,0.0,100
+about,SvelteKit SSR,SvelteKit,Server-Side Rendering,10,CLS,0.01,99
+about,Next.js SSG,Next.js,Static Site Generation,10,FCP,0.92,100
+about,Next.js SSG,Next.js,Static Site Generation,10,LCP,2.86,81
+about,Next.js SSG,Next.js,Static Site Generation,10,SI,1.05,100
+about,Next.js SSG,Next.js,Static Site Generation,10,TTI,2.86,97
+about,Next.js SSG,Next.js,Static Site Generation,10,TBT,11.4,100
+about,Next.js SSG,Next.js,Static Site Generation,10,CLS,0.0,100
+about,Nuxt.js SSG,Nuxt.js,Static Site Generation,10,FCP,2.61,63
+about,Nuxt.js SSG,Nuxt.js,Static Site Generation,10,LCP,3.04,77
+about,Nuxt.js SSG,Nuxt.js,Static Site Generation,10,SI,3.02,93
+about,Nuxt.js SSG,Nuxt.js,Static Site Generation,10,TTI,3.04,96
+about,Nuxt.js SSG,Nuxt.js,Static Site Generation,10,TBT,0.0,100
+about,Nuxt.js SSG,Nuxt.js,Static Site Generation,10,CLS,0.0,100
+about,SvelteKit SSG,SvelteKit,Static Site Generation,10,FCP,2.6,63
+about,SvelteKit SSG,SvelteKit,Static Site Generation,10,LCP,3.09,75
+about,SvelteKit SSG,SvelteKit,Static Site Generation,10,SI,3.02,93
+about,SvelteKit SSG,SvelteKit,Static Site Generation,10,TTI,3.09,95
+about,SvelteKit SSG,SvelteKit,Static Site Generation,10,TBT,0.0,100
+about,SvelteKit SSG,SvelteKit,Static Site Generation,10,CLS,0.0,100
+about,Next.js ISR,Next.js,Incremental Static Regeneration,10,FCP,0.93,100
+about,Next.js ISR,Next.js,Incremental Static Regeneration,10,LCP,2.86,82
+about,Next.js ISR,Next.js,Incremental Static Regeneration,10,SI,1.58,99
+about,Next.js ISR,Next.js,Incremental Static Regeneration,10,TTI,2.86,96
+about,Next.js ISR,Next.js,Incremental Static Regeneration,10,TBT,21.9,100
+about,Next.js ISR,Next.js,Incremental Static Regeneration,10,CLS,0.0,100
+about,Nuxt.js ISR,Nuxt.js,Incremental Static Regeneration,10,FCP,2.49,67
+about,Nuxt.js ISR,Nuxt.js,Incremental Static Regeneration,10,LCP,2.59,88
+about,Nuxt.js ISR,Nuxt.js,Incremental Static Regeneration,10,SI,2.73,96
+about,Nuxt.js ISR,Nuxt.js,Incremental Static Regeneration,10,TTI,2.59,98
+about,Nuxt.js ISR,Nuxt.js,Incremental Static Regeneration,10,TBT,0.0,100
+about,Nuxt.js ISR,Nuxt.js,Incremental Static Regeneration,10,CLS,0.01,99
+about,SvelteKit ISR,SvelteKit,Incremental Static Regeneration,10,FCP,2.58,64
+about,SvelteKit ISR,SvelteKit,Incremental Static Regeneration,10,LCP,3.03,77
+about,SvelteKit ISR,SvelteKit,Incremental Static Regeneration,10,SI,3.01,93
+about,SvelteKit ISR,SvelteKit,Incremental Static Regeneration,10,TTI,3.03,96
+about,SvelteKit ISR,SvelteKit,Incremental Static Regeneration,10,TBT,0.0,100
+about,SvelteKit ISR,SvelteKit,Incremental Static Regeneration,10,CLS,0.0,100

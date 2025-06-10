@@ -1,0 +1,13 @@
+Framework,Strategy,CLS,FCP,LCP,SI,TBT,TTI
+Next.js,Client-Side Rendering,100.0,100.0,80.0,100.0,100.0,96.0
+Next.js,Incremental Static Regeneration,100.0,100.0,82.0,99.0,100.0,96.0
+Next.js,Server-Side Rendering,100.0,100.0,81.0,97.0,100.0,96.0
+Next.js,Static Site Generation,100.0,100.0,81.0,100.0,100.0,97.0
+Nuxt.js,Client-Side Rendering,100.0,64.0,88.0,73.0,100.0,98.0
+Nuxt.js,Incremental Static Regeneration,99.0,67.0,88.0,96.0,100.0,98.0
+Nuxt.js,Server-Side Rendering,100.0,66.0,88.0,93.0,100.0,98.0
+Nuxt.js,Static Site Generation,100.0,63.0,77.0,93.0,100.0,96.0
+SvelteKit,Client-Side Rendering,99.0,66.0,76.0,79.0,100.0,95.0
+SvelteKit,Incremental Static Regeneration,100.0,64.0,77.0,93.0,100.0,96.0
+SvelteKit,Server-Side Rendering,99.0,66.0,77.0,94.0,100.0,96.0
+SvelteKit,Static Site Generation,100.0,63.0,75.0,93.0,100.0,95.0

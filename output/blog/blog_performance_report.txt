@@ -1,0 +1,32 @@
+BLOG PAGE PERFORMANCE REPORT
+==================================================
+
+FRAMEWORK RANKINGS
+--------------------
+1. Next.js: 95.1%
+2. Nuxt.js: 88.5%
+3. SvelteKit: 87.4%
+
+STRATEGY RANKINGS
+--------------------
+1. Server-Side Rendering: 91.3%
+2. Incremental Static Regeneration: 90.6%
+3. Static Site Generation: 90.6%
+4. Client-Side Rendering: 88.8%
+
+BEST COMBINATIONS
+--------------------
+1. Next.js + Incremental Static Regeneration: 96.8%
+2. Next.js + Static Site Generation: 96.8%
+3. Nuxt.js + Server-Side Rendering: 94.3%
+4. Next.js + Server-Side Rendering: 94.2%
+5. Next.js + Client-Side Rendering: 92.5%
+
+METRIC LEADERS
+--------------------
+FCP: Next.js + Client-Side Rendering (100.0%, 0.840)
+LCP: Nuxt.js + Client-Side Rendering (86.0%, 2.670)
+SI: Next.js + Server-Side Rendering (100.0%, 1.750)
+TTI: Nuxt.js + Client-Side Rendering (97.0%, 2.680)
+TBT: Next.js + Client-Side Rendering (100.0%, 53.500)
+CLS: Next.js + Client-Side Rendering (100.0%, 0.020)

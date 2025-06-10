@@ -1,0 +1,13 @@
+Framework,Strategy,Score
+Next.js,Server-Side Rendering,95.83333333333333
+Next.js,Incremental Static Regeneration,95.5
+Next.js,Static Site Generation,95.5
+Nuxt.js,Server-Side Rendering,89.0
+SvelteKit,Static Site Generation,88.5
+Nuxt.js,Incremental Static Regeneration,88.5
+SvelteKit,Incremental Static Regeneration,88.16666666666667
+Nuxt.js,Client-Side Rendering,88.16666666666667
+SvelteKit,Server-Side Rendering,87.66666666666667
+Nuxt.js,Static Site Generation,86.83333333333333
+SvelteKit,Client-Side Rendering,86.83333333333333
+Next.js,Client-Side Rendering,82.5

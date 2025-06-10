@@ -1,0 +1,32 @@
+BLOGPOST PAGE PERFORMANCE REPORT
+==================================================
+
+FRAMEWORK RANKINGS
+--------------------
+1. Next.js: 92.3%
+2. Nuxt.js: 88.1%
+3. SvelteKit: 87.8%
+
+STRATEGY RANKINGS
+--------------------
+1. Server-Side Rendering: 90.8%
+2. Incremental Static Regeneration: 90.7%
+3. Static Site Generation: 90.3%
+4. Client-Side Rendering: 85.8%
+
+BEST COMBINATIONS
+--------------------
+1. Next.js + Server-Side Rendering: 95.8%
+2. Next.js + Incremental Static Regeneration: 95.5%
+3. Next.js + Static Site Generation: 95.5%
+4. Nuxt.js + Server-Side Rendering: 89.0%
+5. SvelteKit + Static Site Generation: 88.5%
+
+METRIC LEADERS
+--------------------
+FCP: Next.js + Client-Side Rendering (100.0%, 0.790)
+LCP: Nuxt.js + Client-Side Rendering (85.0%, 2.710)
+SI: Next.js + Client-Side Rendering (100.0%, 1.240)
+TTI: Nuxt.js + Client-Side Rendering (97.0%, 2.720)
+TBT: Next.js + Client-Side Rendering (100.0%, 15.000)
+CLS: Nuxt.js + Client-Side Rendering (100.0%, 0.000)

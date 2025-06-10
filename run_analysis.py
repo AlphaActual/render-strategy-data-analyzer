@@ -22,7 +22,7 @@ warnings.filterwarnings('ignore')
 
 def setup_environment():
     """Set up the analysis environment"""
-    print("🔧 Setting up analysis environment...")
+    print("Setting up analysis environment...")
     
     # Set style for better visualizations
     plt.style.use('seaborn-v0_8')
@@ -44,12 +44,12 @@ def setup_environment():
     comparison_dir = output_dir / 'cross_page_comparison'
     comparison_dir.mkdir(parents=True, exist_ok=True)
     
-    print("✅ Environment setup complete!")
+    print("Environment setup complete!")
     return output_dir
 
 def load_data():
     """Load all input data files"""
-    print("📊 Loading data files...")
+    print("Loading data files...")
     
     input_files = {
         'blog': 'inputs/master_blog_comparison_slow4g_2025-06-10T09-41-32-118Z.csv',
@@ -63,11 +63,11 @@ def load_data():
             df = pd.read_csv(file_path)
             df['Page_Type'] = page_name
             datasets[page_name] = df
-            print(f"✅ {page_name.upper()}: {df.shape}")
+            print(f"SUCCESS {page_name.upper()}: {df.shape}")
         except Exception as e:
-            print(f"❌ Error loading {page_name}: {e}")
+            print(f"ERROR loading {page_name}: {e}")
     
-    print(f"📈 Total pages loaded: {len(datasets)}")
+    print(f"Total pages loaded: {len(datasets)}")
     return datasets
 
 def process_data(datasets):
@@ -327,9 +327,8 @@ def save_results(cleaned_datasets, page_analyses, all_data, page_performance,
         analysis_results['framework_rankings'].to_csv(output_path / f'{page_name}_framework_rankings.csv')
         analysis_results['strategy_rankings'].to_csv(output_path / f'{page_name}_strategy_rankings.csv')
         analysis_results['combination_rankings'].to_csv(output_path / f'{page_name}_combination_rankings.csv')
-        
-        # Save detailed report
-        with open(output_path / f'{page_name}_performance_report.txt', 'w') as f:
+          # Save detailed report
+        with open(output_path / f'{page_name}_performance_report.txt', 'w', encoding='utf-8') as f:
             f.write(f"{page_name.upper()} PAGE PERFORMANCE REPORT\n")
             f.write("=" * 50 + "\n\n")
             
@@ -375,14 +374,14 @@ def save_results(cleaned_datasets, page_analyses, all_data, page_performance,
 
 def generate_final_report(cleaned_datasets, page_analyses, all_data, page_performance):
     """Generate comprehensive final report"""
-    print("📋 Generating final report...")
+    print("Generating final report...")
     
-    with open('output/COMPREHENSIVE_PERFORMANCE_REPORT.txt', 'w') as f:
-        f.write("🚀 COMPREHENSIVE MULTI-PAGE PERFORMANCE ANALYSIS REPORT\n")
+    with open('output/COMPREHENSIVE_PERFORMANCE_REPORT.txt', 'w', encoding='utf-8') as f:
+        f.write("COMPREHENSIVE MULTI-PAGE PERFORMANCE ANALYSIS REPORT\n")
         f.write("=" * 70 + "\n\n")
         
         # Executive Summary
-        f.write("📊 EXECUTIVE SUMMARY\n")
+        f.write("EXECUTIVE SUMMARY\n")
         f.write("-" * 20 + "\n")
         f.write(f"Pages Analyzed: {len(cleaned_datasets)}\n")
         f.write(f"Frameworks Tested: {', '.join(all_data['Framework'].unique())}\n")
@@ -391,7 +390,7 @@ def generate_final_report(cleaned_datasets, page_analyses, all_data, page_perfor
         f.write(f"Overall Average Score: {all_data['Score'].mean():.1f}%\n\n")
         
         # Page Rankings
-        f.write("🏆 OVERALL PAGE PERFORMANCE RANKINGS\n")
+        f.write("OVERALL PAGE PERFORMANCE RANKINGS\n")
         f.write("-" * 40 + "\n")
         for i, (page, stats) in enumerate(page_performance.iterrows(), 1):
             f.write(f"{i}. {page.upper()}: {stats['Average_Score']:.1f}% (±{stats['Std_Dev']:.1f})\n")
@@ -399,7 +398,7 @@ def generate_final_report(cleaned_datasets, page_analyses, all_data, page_perfor
         
         # Individual Page Analysis
         for page_name, analysis in page_analyses.items():
-            f.write(f"📖 {page_name.upper()} PAGE ANALYSIS\n")
+            f.write(f"{page_name.upper()} PAGE ANALYSIS\n")
             f.write("-" * 30 + "\n")
             best_combo = analysis['combination_rankings'].index[0]
             f.write(f"Best Framework: {analysis['framework_rankings'].index[0]} ({analysis['framework_rankings'].iloc[0]:.1f}%)\n")
@@ -415,7 +414,7 @@ def generate_final_report(cleaned_datasets, page_analyses, all_data, page_perfor
         overall_best_framework = all_data.groupby('Framework')['Score'].mean().sort_values(ascending=False)
         overall_best_strategy = all_data.groupby('Strategy')['Score'].mean().sort_values(ascending=False)
         
-        f.write("💡 KEY RECOMMENDATIONS\n")
+        f.write("KEY RECOMMENDATIONS\n")
         f.write("-" * 25 + "\n")
         f.write(f"1. FOR MAXIMUM PERFORMANCE: Use {overall_best_framework.index[0]} with {overall_best_strategy.index[0]}\n")
         f.write(f"2. BEST PAGE TYPE: {page_performance.index[0]} performs best overall\n")
@@ -438,13 +437,13 @@ def generate_final_report(cleaned_datasets, page_analyses, all_data, page_perfor
     with open('output/analysis_summary.json', 'w') as f:
         json.dump(summary_stats, f, indent=2)
     
-    print("✅ Final report generated!")
+    print("Final report generated!")
 
 def main():
     """Main execution function"""
     start_time = time.time()
     
-    print("🚀 STARTING COMPREHENSIVE MULTI-PAGE PERFORMANCE ANALYSIS")
+    print("STARTING COMPREHENSIVE MULTI-PAGE PERFORMANCE ANALYSIS")
     print("=" * 60)
     
     try:
@@ -478,14 +477,13 @@ def main():
         
         # Summary
         elapsed_time = time.time() - start_time
-        
         print("\n" + "=" * 60)
-        print("🎉 ANALYSIS COMPLETE!")
-        print(f"⏱️  Total execution time: {elapsed_time:.2f} seconds")
-        print("📁 All results saved to the output/ directory")
-        print("📊 Check individual page folders for detailed analysis")
-        print("🔄 Check cross_page_comparison/ for comparative insights")
-        print("📋 Read COMPREHENSIVE_PERFORMANCE_REPORT.txt for executive summary")
+        print("ANALYSIS COMPLETE!")
+        print(f"Total execution time: {elapsed_time:.2f} seconds")
+        print("All results saved to the output/ directory")
+        print("Check individual page folders for detailed analysis")
+        print("Check cross_page_comparison/ for comparative insights")
+        print("Read COMPREHENSIVE_PERFORMANCE_REPORT.txt for executive summary")
         print("=" * 60)
         
         # Display key insights
@@ -493,7 +491,7 @@ def main():
         overall_best_framework = all_data.groupby('Framework')['Score'].mean().sort_values(ascending=False)
         overall_best_strategy = all_data.groupby('Strategy')['Score'].mean().sort_values(ascending=False)
         
-        print("\n🎯 KEY INSIGHTS:")
+        print("\nKEY INSIGHTS:")
         print(f"• Best performing page: {best_page.upper()}")
         print(f"• Best framework overall: {overall_best_framework.index[0]}")
         print(f"• Best strategy overall: {overall_best_strategy.index[0]}")
