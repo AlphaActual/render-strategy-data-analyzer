@@ -1,0 +1,13 @@
+App_Name,Framework,URL,JS bundle size(kB)
+Next.js CSR,Next.js,https://render-strategy-demo-csr-next-app-c.vercel.app/blog/,154
+Next.js ISR,Next.js,https://render-strategy-demo-next-app-isr.vercel.app/blog,137
+Next.js SSG,Next.js,https://render-strategy-demo-next-app-ssg.vercel.app/blog/,137
+Next.js SSR,Next.js,https://render-strategy-demo-next-app-ssr.vercel.app/blog,135
+Nuxt.js CSR,Nuxt.js,https://render-strategy-demo-csr-nuxt-app-c.vercel.app/blog,118
+Nuxt.js ISR,Nuxt.js,https://render-strategy-demo-nuxt-app-isr.vercel.app/blog,118
+Nuxt.js SSG,Nuxt.js,https://render-strategy-demo-nuxt-app-ssg.vercel.app/blog,118
+Nuxt.js SSR,Nuxt.js,https://render-strategy-demo-nuxt-app-ssr.vercel.app/blog,118
+SvelteKit CSR,SvelteKit,https://render-strategy-demo-csr-sveltekit.vercel.app/blog,58.9
+SvelteKit ISR,SvelteKit,https://render-strategy-demo-sveltekit-app-rho.vercel.app/blog,58
+SvelteKit SSG,SvelteKit,https://render-strategy-demo-sveltekit-app-nine.vercel.app/blog,58.9
+SvelteKit SSR,SvelteKit,https://render-strategy-demo-sveltekit-app.vercel.app/blog,58.8

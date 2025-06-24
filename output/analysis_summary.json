@@ -1,10 +1,33 @@
 {
-  "total_pages": 3,
-  "total_frameworks": 3,
-  "total_strategies": 4,
-  "overall_average_score": 90.25462962962963,
-  "best_page": "about",
-  "best_framework": "Next.js",
-  "best_strategy": "Server-Side Rendering",
-  "analysis_timestamp": "2025-06-10T22:07:42.958280"
+  "analysis_date": "2025-06-24T18:06:09.272080",
+  "files_analyzed": [
+    "scripting_raw",
+    "scripting_pct",
+    "build_times",
+    "bundle_sizes"
+  ],
+  "frameworks_compared": [
+    "Next.js",
+    "Nuxt.js",
+    "SvelteKit"
+  ],
+  "strategies_analyzed": [
+    "CSR",
+    "SSR",
+    "SSG",
+    "ISR"
+  ],
+  "outputs_generated": {
+    "figures": [
+      "performance_overview.png",
+      "bundle_analysis.png",
+      "build_analysis.png",
+      "correlation_analysis.png"
+    ],
+    "tables": [
+      "bundle_sizes_summary.csv",
+      "build_times_summary.csv"
+    ],
+    "insights": "comprehensive_insights.md"
+  }
 }
